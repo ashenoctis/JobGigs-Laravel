@@ -15,9 +15,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings',[
+        'heading' => 'Latest Listings',
+        'listings' => [
+            [
+                'id' => 1, 
+                'title' => 'First listing',
+                'description' => 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit.',
+            ],
+            [
+                'id' => 2,
+                'title' => 'Second listing',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta.',
+            ],
+            [
+                'id' => 3,
+                'title' => 'Third listing',
+                'description' => 'Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.',
+            ],
+        ]
+    ]);
 });
 
+/*
 Route::get('/about', function () {
     return response('<h1>Ashish Sharma</h1>', 200) //404, 500
         ->header('Content-Type', 'text/plain') //text/html
@@ -33,4 +53,4 @@ Route::get('/posts/{id}', function ($id) {
 Route::get('/search', function (Request $request) {
     dd($request->name . ' ' . $request->city); //name=Ashish&city=Bangalore
 });
-
+*/
