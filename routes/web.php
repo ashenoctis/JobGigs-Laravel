@@ -40,8 +40,8 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts/{id}', function ($id) {
-    dd($id); //die and dump
-    ddd($id); //die, dump and die
+    dd($id); //Dump and Die
+    ddd($id); //Dump, Die, Debug
     return response('<h1>Post '.$id.'</h1>', 200);
 })->where('id', '[0-9]+'); //only numbers
 

@@ -1,3 +1,7 @@
+@extends('layout')
+
+@section('content')
+
 <h1>{{$heading}}</h1>
 @php   
         $test = 'Ashe';
@@ -18,3 +22,5 @@
 @if(count($listings) == 0)
             <h4>No listings</h4>
 @endif
+
+@endsection
