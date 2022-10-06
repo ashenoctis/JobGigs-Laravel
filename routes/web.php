@@ -24,15 +24,32 @@ Route::get('/', function () {
     ]);
 });
 
-//Single Listing
-Route::get('/listings/{id}', function ($id) {
-    return view('listing',[ //listing is the name of the view
-        'listing' => Listing::find($id)
+//Single Listing -->
+//Route::get('/listings/{id}', function ($id) {
+//Single Listing with Route-Model Binding -->
+Route::get('/listings/{listing}', function (Listing $listing) {
+
+    return view('listing',[
+        'listing' => $listing
     ]);
+
+    /*
+    //Checking if the listing exists manually
+    $listing = Listing::find($id);
+
+    if($listing){
+        return view('listing',[
+            'listing' => $listing
+        ]);
+    }else{
+        abort('404');
+    }
+    */
 });
 
 
 /*
+//Route Examples
 Route::get('/about', function () {
     return response('<h1>Ashish Sharma</h1>', 200) //404, 500
         ->header('Content-Type', 'text/plain') //text/html
