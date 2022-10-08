@@ -26,6 +26,6 @@ use Illuminate\Support\Facades\Route;
 //All Listings
 Route::get('/', [ListingController::class, 'index']);
 
-//Single Listing -->
+//Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 

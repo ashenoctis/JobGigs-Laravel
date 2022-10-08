@@ -10,8 +10,11 @@ class ListingController extends Controller
     //Show all listings
     public function index()
     {
+        //dd(request('tag'));
+        //dd(request()->tag); //Request as helper instead of dependency injection
         return view('listings.index',[ //moved to listings folder
-            'listings' => Listing::all()
+            'listings' => Listing::latest()->filter(request(['tag']))->get()
+            //'listings' => Listing::latest()->get() //same as all()
         ]);
     }
 
