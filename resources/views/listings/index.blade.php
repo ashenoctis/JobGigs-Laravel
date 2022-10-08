@@ -16,6 +16,10 @@
 
 </div>
 
+<div class="mt-6 p-4">
+    {{$listings->links()}} <!-- paginate links -->
+</div>
+
 @if(count($listings) == 0)
             <h4>No listings</h4>
 @endif

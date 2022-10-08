@@ -13,7 +13,7 @@ class ListingController extends Controller
         //dd(request('tag'));
         //dd(request()->tag); //Request as helper instead of dependency injection
         return view('listings.index',[ //moved to listings folder
-            'listings' => Listing::latest()->filter(request(['tag','search']))->get()
+            'listings' => Listing::latest()->filter(request(['tag','search']))->paginate(4)
             //'listings' => Listing::latest()->get() //same as all()
         ]);
     }
