@@ -12,6 +12,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}"> 
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -58,5 +59,6 @@
                 >Post Job</a
             >
         </footer>
+        <x-flash-message />
     </body>
 </html>

@@ -1,0 +1,17 @@
+.alert{
+    position: fixed;
+    top: 0;
+    left:30%;
+    transform:translateX(50%);
+    color:white;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success{
+    background-color: #28a745;
+}
+
+.alert-info{
+    background-color: #17a2b8;
+}

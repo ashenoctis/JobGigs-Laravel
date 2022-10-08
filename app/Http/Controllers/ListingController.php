@@ -49,6 +49,7 @@ class ListingController extends Controller
         Listing::create($formFields);
         //Listing::create($reuest->all()); //insecure unguarded mass assignment
 
-        return redirect('/');
+        return redirect('/')->with('success','Listing created successfully');
+        //Session::flash('message','Listing created successfully!');
     }
 }
