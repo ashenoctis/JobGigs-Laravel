@@ -1,11 +1,13 @@
 @if(session()->has('message'))
-    <div class="alert alert-info">
+    <div x-data="{show:true}" x-init="setTimeout(() => show = false, 3000)"
+        x-show="show" class="alert alert-info">
         {{ session('message') }}
     </div>
 @endif
 
 @if(session()->has('success'))
-    <div class="alert alert-success">
+    <div  x-data="{show:true}" x-init="setTimeout(() => show = false, 3000)"
+        x-show="show" class="alert alert-success">
         {{ session('success') }}
     </div>
 @endif
