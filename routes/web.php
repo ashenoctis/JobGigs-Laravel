@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 //Common Resource Routes
 // index - Show all listings
+// show - Show single listing
 // create - Show form to create new listing
 // store - Save new listing
-// show - Show single listing
-//  edit - Show form to edit listing
+// edit - Show form to edit listing
 // update - Save edited listing
 // destroy - Delete listing
 
