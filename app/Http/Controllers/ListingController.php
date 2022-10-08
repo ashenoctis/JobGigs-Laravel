@@ -31,4 +31,23 @@ class ListingController extends Controller
     {
         return view('listings.create');
     }
+
+    //Store listing data
+    public function store(Request $request)
+    {
+        //dd($request->all());
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => 'required|unique:listings,company',
+            'location' => 'required',
+            'website' => 'required',
+            'email' => 'required|email|unique:listings,email',
+            'tags' => 'required',
+            'description' => 'nullable'
+        ]);
+
+        Listing::create($formFields);
+
+        return redirect('/');
+    }
 }

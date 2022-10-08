@@ -9,6 +9,17 @@ class Listing extends Model
 {
     use HasFactory;
 
+    //Add fillable property to allow mass assignment
+    protected $fillable = [
+        'title',
+        'company',
+        'location',
+        'website',
+        'email',
+        'tags',
+        'description'
+    ];
+
     //filter model by tag
     public function scopeFilter($query, array $filters)
     {
