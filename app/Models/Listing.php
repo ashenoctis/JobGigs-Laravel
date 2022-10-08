@@ -10,7 +10,7 @@ class Listing extends Model
     use HasFactory;
 
     //Add fillable property to allow mass assignment
-    protected $fillable = [
+    /* protected $fillable = [
         'title',
         'company',
         'location',
@@ -18,7 +18,7 @@ class Listing extends Model
         'email',
         'tags',
         'description'
-    ];
+    ]; */
     //In case of mass unguarded fields, add Model::unguard();
     //in app/provider/AppServiceProvider.php -> boot() method
 

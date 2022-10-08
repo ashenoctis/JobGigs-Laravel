@@ -47,6 +47,12 @@ class ListingController extends Controller
             'description' => 'nullable'
         ]);
 
+        //add logo to form field to submit
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->logo->store('logos','public');
+            //folder name in storage/app or storage/app/public
+        }
+
         Listing::create($formFields);
         //Listing::create($reuest->all()); //insecure unguarded mass assignment
 

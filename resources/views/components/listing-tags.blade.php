@@ -2,6 +2,7 @@
 
 @php
     $tags = explode(',', $tagsCsv); //comma separated values in array
+    $tags = explode(' ', $tagsCsv); //space separated values in array
 @endphp
 
 <ul class="flex">
