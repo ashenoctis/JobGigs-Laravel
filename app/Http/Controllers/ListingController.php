@@ -47,6 +47,7 @@ class ListingController extends Controller
         ]);
 
         Listing::create($formFields);
+        //Listing::create($reuest->all()); //insecure unguarded mass assignment
 
         return redirect('/');
     }

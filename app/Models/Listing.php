@@ -19,6 +19,9 @@ class Listing extends Model
         'tags',
         'description'
     ];
+    //In case of mass unguarded fields, add Model::unguard();
+    //in app/provider/AppServiceProvider.php -> boot() method
+
 
     //filter model by tag
     public function scopeFilter($query, array $filters)
