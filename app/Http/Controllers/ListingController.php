@@ -59,4 +59,13 @@ class ListingController extends Controller
         return redirect('/')->with('success','Listing created successfully');
         //Session::flash('message','Listing created successfully!');
     }
+
+    //Show form to edit listing
+    public function edit(Listing $listing) //Pass listing model to edit view
+    {
+        //dd($listing->title);
+        return view('listings.edit',[
+            'listing' => $listing
+        ]);
+    }
 }
