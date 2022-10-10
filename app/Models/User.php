@@ -47,4 +47,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Listing::class, 'user_id');
     }
+
+    //use: php artisan tinker
+    //to test DB results & relationships
 }

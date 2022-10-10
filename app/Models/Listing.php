@@ -46,4 +46,7 @@ class Listing extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    //use: php artisan tinker
+    //to test DB results & relationships
 }
