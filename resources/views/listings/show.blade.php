@@ -50,7 +50,7 @@
 
                     </x-card>
                     <!-- edit link -->
-                    <x-card class="mt-4 p-2 flex space-x-6">
+                   {{-- <x-card class="mt-4 p-2 flex space-x-6">
                         <a href="/listings/{{$listing->id}}/edit"
                             class="text-black hover:opacity-80">
                             <i class="fa-solid fa-edit"></i> Edit </a>
@@ -62,7 +62,7 @@
                         <button class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</button>
                     </form>
 
-                </x-card>
+                </x-card> --}}
 
                 </div>
             </div>          

@@ -42,6 +42,9 @@ Route::put('/listings/{listing}', [ListingController::class, 'update'])->middlew
 //Delete Listing Data
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
+//Manage Listings
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 //Single Listing - should be below create route otherwise conflict with /create vs /{listing}
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
