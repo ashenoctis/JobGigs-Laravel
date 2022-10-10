@@ -53,6 +53,8 @@ class ListingController extends Controller
             //folder name in storage/app or storage/app/public
         }
 
+        $formFields['user_id'] = auth()->id(); //add user id to form field to submit
+
         Listing::create($formFields);
         //Listing::create($reuest->all()); //insecure unguarded mass assignment
 
