@@ -31,7 +31,16 @@ class UserController extends Controller
         auth()->login($user);
 
         //Redirect to dashboard
-        return redirect('/')->with('success', 'Your account has been created.');
+        return redirect('/')->with('success', 'Your account has been created.');        
+    }
+
+    //Logout User
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate(); //Clear session data
+        $request->session()->regenerateToken(); //Regenerate token
+        
+        return redirect('/')->with('message', 'You have been logged out.');
     }
 
 }

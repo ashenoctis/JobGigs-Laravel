@@ -45,6 +45,13 @@
                     <a href="/listings/manage" class="hover:text-laravel"
                         ><i class="fa-solid fa-gear"></i>Manage Listings</a>
                 </li>
+                <li>
+                    <form action="POST" class="inline" action="/logout">
+                        @csrf
+                        <button type ="submit" class="hover:text-laravel">
+                            <i class="fa-solid fa-sign-out"></i>Logout
+                    </form>
+                </li>
 
                 @else
                 <li>
