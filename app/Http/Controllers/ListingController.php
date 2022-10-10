@@ -74,6 +74,11 @@ class ListingController extends Controller
     //Update listing data
     public function update(Request $request, Listing $listing)
     {
+        //Make sure user is Owner of listing
+        if($listing->user_id !== auth()->id()){
+            abort(403,'You are not authorized to edit this listing');
+        }
+
         //dd($request->all());
         $formFields = $request->validate([
             'title' => 'required',
@@ -97,15 +102,20 @@ class ListingController extends Controller
     //Delete listing data
     public function destroy(Listing $listing)
     {
+        //Make sure user is Owner of listing
+        if($listing->user_id !== auth()->id()){
+            abort(403,'You are not authorized to edit this listing');
+        }
+
         $listing->delete();
-        return redirect('/')->with('message','Listing deleted successfully');
+        return back()->with('message','Listing deleted successfully');
     }
 
     //Manage listing data
     public function manage()
     {
         return view('listings.manage',[
-            'listings' => auth()->user()->listings()->get()
+            'listings' => Listing::where('user_id',auth()->id())->latest()->paginate(6)
         ]);
     }
 }
